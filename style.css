@@ -3,82 +3,233 @@
     padding: 0;
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
-
 }
 
 body{
     width: 100%;
-    display:flex;
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 2%;
+    /* background-color: #f9f9f9;    */
     background: linear-gradient(-45deg, #3494e6, #ec6ead, #3494e6, #ec6ead);
     background-size: 400% 400%;
     animation: animate 7s infinite alternate;
 }
 
-form{
+.resumeDiv{
+    width: 70%;
     border: 2px solid black;
-    width: 50%;
-    padding: 2%;
-    border-radius: 28px;
-    background-color: whitesmoke;
 }
 
-.form-group{
+header{
+    width: 100%;
+    padding: 50px;
+    height: 170px;
     display: flex;
-    flex-direction: column;
-    margin-bottom: 20px;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #00bfff;
+    margin-bottom: 0px;
 }
 
-body h1{
+header h1{
+    font-size: 50px;
+}
+
+.white{
     color: white;
-    font-size: 40px;
 }
 
-.label{
-    font-size: 18px;
-    margin-bottom: 8px;
-    color: rgb(255, 137, 2);
-    font-weight: 100;
-    
+.content{
+    width: 100%;
+    display: flex;
+
 }
 
-.input{
-    font-size: 16px;
-    padding: 8px;
-    border-radius: 8px;
-    border: 1px solid gray;
-    outline: none;
-
-    &:focus{
-        border: 1px solid blue;
-    }
+.content aside{
+    width: 30%;
+    padding-left: 50px;
+    padding-bottom: 50px;
+    background-color: #f9f9f9;
 }
 
-.mb-20{
+header img{
+    width: 165px;
+	height: 165px;
+	border-radius: 50%;
+	overflow: hidden;
+	border: 15px groove deepskyblue;
+
+}
+
+.contact,
+.education,
+.skills{
+    margin-bottom: 30px;
+}
+
+
+.contact h2,
+.education h2,
+.skills h2,
+.language h2,
+.experience h2{
+    border-bottom: 2px solid #00bfff;
     margin-bottom: 20px;
+    padding-bottom: 3px;
+    color: #00bfff;
 }
 
-.submit{
-    font-size: 18px;
-    padding: 12px;
-    border-radius: 6px;
-    width: 50%;
+.reference h2{
+    border-bottom: 2px solid #00bfff;
+    margin-bottom: 40px;
+    padding-top: 10px;
+    padding-bottom: 3px;
+    color: #00bfff;
+}
 
-    &:hover{
-        background-color: rgb(0, 162, 255);
-    }
-    &:active{
-        transform: scale(0.999);
-    }
+.education{
+    line-height: 20px;
+}
+
+.skills ul,
+.language ul{
+    margin-left: 18px;
+}
+
+.main-content{
+    padding-left: 50px;
+    padding-top: 18px;
+    width: 70%;
+    background-color: white;
+}
+
+.experience-items{
+    margin-bottom: 36px;
+}
+
+.experience-items p{
+    margin-bottom: 5px;
+}
+.experience-items ul{
+    margin-left: 18px;
+    margin-top: 15px;
 }
 
 .btnDiv{
-    text-align: center;
+    width: 70%;
+    padding: 2%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 30px;
 }
 
+.btn{
+    font-size: 20px;
+    font-weight: 700;
+    padding: 10px 18px;
+    border-radius: 8px;
+    color: white;
+    background: #00bfff;
+    cursor: pointer;
+
+    &:hover{
+        background-color: #007b9e;
+    }
+    &:active{
+        transform: scale(0.94);
+    }
+}
+
+.hide{
+    display: none;
+}
+
+@media print {
+    /* A4 Page Setup */
+    @page {
+        size: A4;
+        margin: 10mm; 
+    }
+
+    body {
+        background-color: white;
+        font-size: 9pt;
+        line-height: 1.2; 
+    }
+
+    .resumeDiv {
+        width: 100%; 
+        border: none;
+        padding: 0;
+    }
+
+    header {
+        padding: 15px; 
+        height: auto; 
+        padding-left: 50px;
+    }
+
+    header img {
+        width: 120px;
+        height: 120px;
+        margin-right: 50px;
+    }
+
+    header h1{
+        font-size: 40px;
+        text-transform: uppercase;
+    }
+
+    .content {
+        display: flex;
+        justify-content: space-between; 
+    }
+
+    aside, .main-content {
+        width: 70%; 
+    }
+
+    h2 {
+        font-size: 11pt;
+        margin-bottom: 8px;
+    }
+
+    p, ul, li {
+        font-size: 9pt; 
+        margin-bottom: 4px; 
+    }
+
+    ul, li {
+        margin-left: 0px;
+    }
+    .skills ul, .experience-items ul {
+        margin-top: 5px; 
+    }
+
+    .resumeDiv, header, .content, aside, .main-content {
+        page-break-inside: avoid;
+    }
+
+
+    .btnDiv {
+        display: none; 
+    }
+
+    .contact, .education, .skills, .experience{
+        margin-bottom: 15px; 
+    }
+
+    .reference{
+        margin-top: 75px;
+    }
+    body {
+        background: none !important;
+      }
+}
 @keyframes animate {
     0% {
       background-position: 0% 50%;
